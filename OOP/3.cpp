@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll = long long;
+
+class SinhVien{
+private:
+    string ma, lop, ten, ns;
+    double gpa;
+public:
+    void nhap(){
+        this->ma = "SV001";
+        getline(cin, this->ten);
+        getline(cin, this->lop);
+        getline(cin, this->ns);
+        cin >> this->gpa;
+    }
+    void chuanHoa(){
+        if(ns[1] == '/') ns = "0" + ns;
+        if(ns[4] == '/') ns.insert(3, "0");
+    }
+    void in(){
+        cout << ma << ' ' << ten << ' ' << lop << ' ' << ns << ' ' << fixed << setprecision(1) << gpa << endl;
+    }
+};
+
+int main(){
+    SinhVien s;
+    s.nhap();
+    s.chuanHoa();
+    s.in();
+}
+
+// Viết chương trình khai báo lớp Sinh Viên gồm các thông tin: Mã SV, Họ tên, Lớp, Ngày sinh và Điểm GPA (dạng số thực float). Hàm khởi tạo không có tham số, gán các giá trị thuộc tính ở trạng thái mặc định (xâu ký tự rỗng, giá trị số bằng 0). Đọc thông tin 1 sinh viên từ bàn phím (không có mã sinh viên) và in ra màn hình. Trong đó Mã SV được gán là SV001. Ngày sinh được chuẩn hóa về dạng dd/mm/yyyy.
+
+// Input Format
+
+// Gồm 4 dòng : 1. Họ tên không quá 30 chữ cái.
+
+// Lớp là một chuỗi không có dấu cách
+
+// Ngày sinh có đủ 3 phần ngày tháng năm nhưng có thể chưa đúng chuẩn dd/mm/yyyy.
+
+// Điểm GPA đảm bảo trong thang điểm 4 với 2 nhiều nhất 2 số sau dấu phẩy.
+
+// Constraints
+
+// N/A
+
+// Output Format
+
+// Ghi thông tin sinh viên trên 1 dòng, mỗi thông tin cách nhau 1 khoảng trống, gpa lấy 1 chữ số sau dấu phẩy
+
+// Sample Input 0
+
+// Nguyen Van Nam
+// CNTT1
+// 16/8/2001
+// 2.8
+// Sample Output 0
+
+// SV001 Nguyen Van Nam CNTT1 16/08/2001 2.8
